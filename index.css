@@ -1,0 +1,330 @@
+/* Fonts import */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap");
+
+/* Style reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+/* Main container */
+.main-wrapper {
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 3.1rem;
+  font-family: "Montserrat", sans-serif;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(#eeeeee, #ffffff);
+}
+
+/* Header */
+
+header {
+  padding: 0.5rem;
+  /* border-bottom: 1px solid #cfcfcf; */
+  margin-bottom: 9.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+header h1 {
+  font-size: 2.4rem;
+  background: linear-gradient(#ef6c00, #db6300);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.1rem;
+  margin-bottom: 1rem;
+}
+
+header > div {
+  height: 0.1rem;
+  width: 20.5rem;
+  background: #cfcfcf;
+}
+
+/* Main content */
+
+.content-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+/* Callbacks */
+.results-wrapper {
+  position: relative;
+  width: 24.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/* Texto dos callbacks */
+.results-wrapper span {
+  position: absolute;
+  font-size: 1.6rem;
+  color: #ff6600;
+  margin-bottom: 0.9rem;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: -0.1rem;
+  font-weight: 700;
+
+  visibility: hidden;
+}
+
+.results-wrapper span.visible {
+  visibility: visible;
+}
+
+.results-wrapper span.is-right.visible {
+  color: #32bf00;
+}
+
+.results-wrapper span.is-failed.visible {
+  color: #cc3300;
+}
+
+/* Números da tentativa do usuário */
+.numbers-wrapper {
+  margin-bottom: 5.6rem;
+  margin-top: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.875rem;
+}
+
+/* Casas decimais */
+.numbers-wrapper .hundred,
+.numbers-wrapper .tenth,
+.numbers-wrapper .primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.numbers-wrapper .hundred,
+.numbers-wrapper .tenth {
+  display: none;
+}
+
+.numbers-wrapper .hundred.visible,
+.numbers-wrapper .tenth.visible {
+  display: flex;
+}
+
+/* Estrutura do LED (box superior) */
+.top-box-hundred,
+.top-box-tenth,
+.top-box-primary {
+  height: 5rem;
+  width: 5.5rem;
+  border-left: 1rem solid #262a34;
+  border-right: 1rem solid #262a34;
+  border-top: 1rem solid #262a34;
+  border-bottom: 0.5rem solid #dddddd;
+  border-radius: 0.8rem;
+  margin-bottom: -0.1rem;
+}
+
+/* Estrutura do LED (box inferior) */
+.bottom-box-hundred,
+.bottom-box-tenth,
+.bottom-box-primary {
+  height: 5rem;
+  width: 5.5rem;
+  border-left: 1rem solid #262a34;
+  border-right: 1rem solid #262a34;
+  border-top: 0.5rem solid #dddddd;
+  border-bottom: 1rem solid #262a34;
+  border-radius: 0.8rem;
+}
+
+/* Cut borders */
+.top-cross-one,
+.top-cross-two,
+.bottom-cross-one,
+.bottom-cross-two {
+  height: 0.2rem;
+  width: 140%;
+  background: #f5f5f5;
+  position: absolute;
+  z-index: 10;
+}
+
+/* Divisões da box para fazer efeito LED (parte superior) */
+.top-cross-one {
+  top: 2.6rem;
+  transform: rotate(45deg);
+}
+.top-cross-two {
+  top: 2.6rem;
+  transform: rotate(135deg);
+}
+
+/* Divisões da box para fazer efeito LED (parte inferior) */
+.bottom-cross-one {
+  bottom: 2.6rem;
+  transform: rotate(45deg);
+}
+.bottom-cross-two {
+  bottom: 2.6rem;
+  transform: rotate(135deg);
+}
+
+/* Botão de reiniciar */
+.restart-wrapper {
+  margin-bottom: 7.3rem;
+  visibility: hidden;
+}
+
+.restart-wrapper button {
+  width: 13rem;
+  height: 4.2rem;
+  border: none;
+  border-radius: 0.6rem;
+  background: linear-gradient(#434854, #9e9e9e);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.restart-wrapper button > span {
+  font-size: 1.2rem;
+  color: #ffffff;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+}
+
+.restart-wrapper.visible {
+  visibility: visible;
+}
+
+/* input para inserir uma tentativa */
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.1rem;
+  flex-wrap: wrap;
+}
+
+.input-wrapper input {
+  width: 21.7rem;
+  height: 4.2rem;
+  border: 1px solid #cfcfcf;
+  border-radius: 0.4rem;
+  padding: 1.4rem 1.2rem;
+  font-size: 1.2rem;
+}
+
+.input-wrapper input:focus {
+  border: 1px solid #ff6600;
+}
+
+/* Botão para enviar a tentativa */
+.input-wrapper button {
+  width: 7rem;
+  height: 4.2rem;
+  border: none;
+  border-radius: 0.4rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  background: linear-gradient(#ef6c00, #c0661c);
+  color: #ffffff;
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.input-wrapper button.disabled {
+  background: #dddddd;
+  cursor: not-allowed;
+}
+
+.input-wrapper button:not(.disabled):hover {
+  filter: brightness(0.9);
+}
+
+/* Remover as setas que aparecem no input de tipo number */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Media query para dimensões maiores (largura) */
+@media screen and (min-width: 1000px) {
+  header h1 {
+    font-size: 3.6rem;
+  }
+
+  header > div {
+    width: 25.5rem;
+  }
+
+  .top-box-hundred,
+  .top-box-tenth,
+  .top-box-primary {
+    height: 6.75rem;
+    width: 7.447rem;
+  }
+  .bottom-box-hundred,
+  .bottom-box-tenth,
+  .bottom-box-primary {
+    height: 6.75rem;
+    width: 7.447rem;
+  }
+
+  .top-cross-one {
+    top: 3.55rem;
+    transform: rotate(43deg);
+  }
+  .top-cross-two {
+    top: 3.55rem;
+    transform: rotate(137deg);
+  }
+
+  .bottom-cross-one {
+    bottom: 3.55rem;
+    transform: rotate(43deg);
+  }
+  .bottom-cross-two {
+    bottom: 3.55rem;
+    transform: rotate(137deg);
+  }
+
+  .top-cross-one,
+  .top-cross-two,
+  .bottom-cross-one,
+  .bottom-cross-two {
+    height: 0.3rem;
+    width: 150%;
+    background: #f5f5f5;
+    position: absolute;
+    z-index: 10;
+  }
+}

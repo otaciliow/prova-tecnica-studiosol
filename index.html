@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+    <title>
+      Prova T&eacute;cnica Front End - Studio Sol (Qual &eacute; o
+      n&uacute;mero?)
+    </title>
+  </head>
+  <body>
+    <!-- Container principal -->
+    <div class="main-wrapper">
+      <!-- Header -->
+      <header>
+        <h1>QUAL &Eacute; O NÚMERO?</h1>
+
+        <!-- Barra que faz a divisão das seções -->
+        <div></div>
+        <!-- /Barra que faz a divisão das seções -->
+      </header>
+      <!-- /Header -->
+
+      <main>
+        <!-- Content wrapper -->
+        <div class="content-wrapper">
+          <!-- Container do callback do algoritmo -->
+          <div class="results-wrapper">
+            <span class="is-lower">&Eacute; menor</span>
+            <span class="is-higher">&Eacute; maior</span>
+            <span class="is-right">Voc&ecirc; acertou!!!!!</span>
+            <span class="is-failed">ERRO</span>
+          </div>
+          <!-- /Container do callback do algoritmo -->
+
+          <!-- Container dos displays de LED -->
+          <div class="numbers-wrapper">
+            <!-- Casa de centena -->
+            <div class="hundred">
+              <span class="top-box-hundred"></span>
+              <span class="bottom-box-hundred"></span>
+              <span class="top-cross-one"></span>
+              <span class="top-cross-two"></span>
+              <span class="bottom-cross-one"></span>
+              <span class="bottom-cross-two"></span>
+            </div>
+            <!-- /Casa de centena -->
+
+            <!-- Casa de dezena -->
+            <div class="tenth">
+              <span class="top-box-tenth"></span>
+              <span class="bottom-box-tenth"></span>
+              <span class="top-cross-one"></span>
+              <span class="top-cross-two"></span>
+              <span class="bottom-cross-one"></span>
+              <span class="bottom-cross-two"></span>
+            </div>
+            <!-- /Casa de dezena -->
+
+            <!-- Casa inicial -->
+            <div class="primary">
+              <span class="top-box-primary"></span>
+              <span class="bottom-box-primary"></span>
+              <span class="top-cross-one"></span>
+              <span class="top-cross-two"></span>
+              <span class="bottom-cross-one"></span>
+              <span class="bottom-cross-two"></span>
+            </div>
+            <!-- /Casa inicial -->
+          </div>
+          <!-- /Container dos displays de LED -->
+
+          <!-- Container do botão para reiniciar a página -->
+          <div class="restart-wrapper">
+            <button id="restart-button">
+              <img
+                src="./assets/icon/refresh-icon.svg"
+                alt="&Iacute;cone de recarregamento"
+              />
+              <span>NOVA PARTIDA</span>
+            </button>
+          </div>
+          <!-- /Container do botão para reiniciar a página -->
+
+          <!-- Container do input e do botão para enviar uma tentativa -->
+          <div class="input-wrapper">
+            <input
+              type="number"
+              placeholder="Digite o palpite"
+              id="player-number"
+            />
+
+            <!-- Input que recebe o valor aleatório puxado da API -->
+            <input
+              type="number"
+              disabled
+              style="display: none"
+              id="randomized-number-container"
+            />
+            <!-- /Input que recebe o valor aleatório puxado da API -->
+
+            <button type="button" id="send-button" onclick="compareNumbers()">
+              ENVIAR
+            </button>
+          </div>
+          <!-- /Container do input e do botão para enviar uma tentativa -->
+        </div>
+        <!-- /Content wrapper -->
+      </main>
+    </div>
+    <!-- /Container principal -->
+
+    <script rel="text/javascript" src="./index.js"></script>
+  </body>
+</html>
